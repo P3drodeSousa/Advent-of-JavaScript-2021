@@ -1,5 +1,10 @@
-# Advent of JavaScript 2021
+![Advent of JavaScript](https://adventofjavascript.s3.us-east-1.amazonaws.com/2021/advent-of-js-gumroad-cover.png)
 
-This github contains all of the chasllenges of Advent Javascript 2021.
+# Day 1 - Pomodoro Timer
 
-[Advent of JavaScript 2021](https://www.adventofjs.com/)
+## Challenge
+
+Users should be able to:
+
+- Start and Stop the Timer
+- Click on the gear icon to change the length (minutes and seconds) for the timer.

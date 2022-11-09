@@ -1,78 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>04 - Eyes on the Screen || Advent of JavaScript</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
 
-  <body>
-    <div class="keyboard">
-      <h1>Eyes on the Screen</h1>
-      <div class="row">
-        <button class="key" data-key="`">`</button>
-        <button class="key" data-key="1">1</button>
-        <button class="key" data-key="2">2</button>
-        <button class="key" data-key="3">3</button>
-        <button class="key" data-key="4">4</button>
-        <button class="key" data-key="5">5</button>
-        <button class="key" data-key="6">6</button>
-        <button class="key" data-key="7">7</button>
-        <button class="key" data-key="8">8</button>
-        <button class="key" data-key="9">9</button>
-        <button class="key" data-key="0">0</button>
-        <button class="key" data-key="-">-</button>
-        <button class="key" data-key="=">=</button>
-        <button class="key" data-key="BACKSPACE">DEL</button>
-      </div>
-      <div class="row">
-        <button class="key utility" data-key="TAB">Tab</button>
-        <button class="key" data-key="Q">Q</button>
-        <button class="key" data-key="W">W</button>
-        <button class="key" data-key="E">E</button>
-        <button class="key" data-key="R">R</button>
-        <button class="key" data-key="T">T</button>
-        <button class="key" data-key="Y">Y</button>
-        <button class="key" data-key="U">U</button>
-        <button class="key" data-key="I">I</button>
-        <button class="key" data-key="O">O</button>
-        <button class="key" data-key="P">P</button>
-        <button class="key" data-key="[">[</button>
-        <button class="key" data-key="]">]</button>
-        <button class="key" data-key="\">\</button>
-      </div>
-      <div class="row">
-        <button class="key utility" data-key="CAPSLOCK">CAPS</button>
-        <button class="key" data-key="A">A</button>
-        <button class="key" data-key="S">S</button>
-        <button class="key" data-key="D">D</button>
-        <button class="key" data-key="F">F</button>
-        <button class="key" data-key="G">G</button>
-        <button class="key" data-key="H">H</button>
-        <button class="key" data-key="J">J</button>
-        <button class="key" data-key="K">K</button>
-        <button class="key" data-key="L">L</button>
-        <button class="key" data-key=";">;</button>
-        <button class="key" data-key="'">'</button>
-        <button class="key utility" data-key="ENTER">ENTER</button>
-      </div>
-      <div class="row">
-        <button class="key utility" data-key="SHIFT">SHIFT</button>
-        <button class="key" data-key="Z">Z</button>
-        <button class="key" data-key="X">X</button>
-        <button class="key" data-key="C">C</button>
-        <button class="key" data-key="V">V</button>
-        <button class="key" data-key="B">B</button>
-        <button class="key" data-key="N">N</button>
-        <button class="key" data-key="M">M</button>
-        <button class="key" data-key=",">,</button>
-        <button class="key" data-key=".">.</button>
-        <button class="key" data-key="/">/</button>
-        <button class="key utility" data-key="SHIFT">SHIFT</button>
-      </div>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04 - Multiple Checkboxes || Advent of JavaScript</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <div class="cover">
+      <img src="./images/podcast-cover.png" alt="Compressed.fm" />
     </div>
-    <script src="app.js"></script>
-  </body>
+    <div class="content">
+      <h1>Listen to all the Compressed.fm Episodes</h1>
+
+      <ul class="episodes">
+        <li>
+          <label for="episode-1">
+            <input type="checkbox" name="episode-1" id="episode-1" />
+            <span>1 || Trailer</span>
+          </label>
+        </li>
+        <li>
+          <label for="episode-2">
+            <input type="checkbox" name="episode-2" id="episode-2" />
+            <span>2 || James Q Quick Origin Story</span>
+          </label>
+        </li>
+        <li>
+          <label for="episode-3">
+            <input type="checkbox" name="episode-3" id="episode-3" />
+            <span>3 || Amy Dutton's Origin Story</span>
+          </label>
+        </li>
+        <li>
+          <label for="episode-4">
+            <input type="checkbox" name="episode-4" id="episode-4" />
+            <span>4 || Starting a New Development Project</span>
+          </label>
+        </li>
+        <li>
+          <label for="episode-5">
+            <input type="checkbox" name="episode-5" id="episode-5" />
+            <span>5 || How Do you Start a New Design Project?</spa>
+          </label>
+        </li>
+        <li>
+          <label for="episode-6">
+            <input type="checkbox" name="episode-6" id="episode-6" />
+            <span>6 || Freelancing (Part 1)</span>
+          </label>
+        </li>
+        <li>
+          <label for="episode-7">
+            <input type="checkbox" name="episode-7" id="episode-7" />
+            <span>7 || Freelancing (Part 2)</span>
+          </label>
+        </li>
+        <li>
+          <label for="episode-8">
+            <input type="checkbox" name="episode-8" id="episode-8" />
+            <span>8 || The Tech Behind jamesqquick.com</span>
+          </label>
+        </li>
+        <li>
+          <label for="episode-9">
+            <input type="checkbox" name="episode-9" id="episode-9" />
+            <span>9 || The Tech Behind SelfTeach.me</span>
+          </label>
+        </li>
+        <li>
+          <label for="episode-10">
+            <input type="checkbox" name="episode-10" id="episode-10" />
+            <span>10 || Tech Behind SelfTeach.me</spa>
+          </label>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+
 </html>

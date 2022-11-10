@@ -17,12 +17,22 @@ const iconNameToSizeMap = {
   rainy: { width: 160, height: 222 },
 };
 
-let userPosition;
+const api = {
+  key: "cf742c5cc6b0b5c2b7f4b17262c20468",
+  base: "https://api.openweathermap.org/data/2.5/",
+};
 
 /* E.h */
-const successCallback = (position) => {
-  userPosition = position;
-  console.log(userPosition);
+const successCallback = async (position) => {
+  try {
+    const res = await fetch(
+      `https://api.openweathermap.org/data/2.5/forecast/daily?lat=44.34&lon=10.99&cnt=7&appid=${api.key}`
+    );
+    const data = await res.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 const errorCallback = (error) => {
@@ -30,19 +40,5 @@ const errorCallback = (error) => {
 };
 
 window.addEventListener("load", async () => {
-  const api = {
-    key: "f33a484cf794d08d0148764789aaba32",
-    base: "https://api.openweathermap.org/data/2.5/",
-  };
-
-  try {
-    navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-    const res = await fetch(
-      `${api.base}forecast/daily?lat=${userPosition.coords.latitude}&lon=${userPosition.coords.longitude}&cnt=5units=metric&APPID=${api.key}`
-    );
-    const data = await res.json();
-    console.log(data);
-  } catch (error) {
-    console.log(error);
-  }
+  navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 });

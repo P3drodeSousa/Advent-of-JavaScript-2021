@@ -1,95 +1,187 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;800&family=Roboto+Mono:wght@700&display=swap');
 
 body {
-  background: #262529;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: #F6F6F3;
+  padding: 0;
+  margin: 0;
   min-width: 100vw;
   min-height: 100vh;
-  font-family: 'Source Sans Pro', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto Mono', monospace;
+  color: #333;
 }
 
 .wrapper {
-  background: #262529;
-  box-shadow: 0px 0px 250px #000000;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 44px rgba(148, 146, 120, 0.23);
   border-radius: 20px;
-  padding: 60px 80px;
-  text-align: center;
+  width: 765px;
+  padding-top: 55px;
 }
 
-.amount {
-  color: #FFC700;
-  font-weight: bold;
-  font-size: 6rem;
+.tip-amount {
+  padding-bottom: 35px;
+  border-bottom: 1px solid #DEDEDE;
+  margin-bottom: 35px;
 }
 
-.dollar-sign {
-  font-size: 5.5rem;
+.total-per-person {
+  padding-bottom: 35px;
 }
+
+.tip-amount,
+.total-per-person {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 35px;
+}
+
+.tip-amount label,
+.total-per-person label {
+  font-size: 0.875rem;
+  text-align: right;
+}
+
+.tip-amount .dollars,
+.total-per-person .dollars {
+  font-size: 5rem;
+}
+
+.tip-amount sup,
+.total-per-person sup {
+  font-size: 3rem;
+}
+
 
 .dollars {
-
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
 }
 
-input[type=range] {
-  -webkit-appearance: none;
-  appearance: none;
-  border-radius: 10px;
-  width: 700px;
-  height: 14px;
-  background: #4D4C53;
+.input-fields {
+  background: #F7F7F7;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: flex;
+  padding: 0 35px;
+}
+
+.input-fields .bill-amount {
+  border-right: 2px solid #DEDEDE;
+  padding: 65px 45px 45px 20px;
+  width: 70%;
+}
+
+.input-fields .number-of-people {
+  padding: 65px 45px 45px;
+  width: 30%;
+}
+
+.input-fields .number-of-people .field {
+  display: flex;
+  align-items: flex-end;
+}
+
+.bill-amount .field {
+  display: flex;
+  align-items: flex-end;
+}
+
+input[type="text"] {
+  text-align: center;
+  font-size: 3.875rem;
+  font-family: 'Inter', sans-serif;
+  border: none;
+  background: none;
   outline: none;
-  margin: 70px 0;
+  margin-right: 10px;
+  width: 100%;
+  border-bottom: 3px dotted #B3B3B3;
 }
 
-/* slider handle */
-input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 50px;
-  height: 50px;
-  background: #EA346F;
+.bill-amount input[type=text] {
+  background: url('./images/dollar.svg') left 15px no-repeat;
+  padding-left: 40px;
+  width: 100%;
+}
+
+.number-of-people input[type=text] {
+  background: url('./images/people.svg') left 20px no-repeat;
+  padding-left: 40px;
+  text-align: right;
+}
+
+.input-fields .label {
+  margin-bottom: 45px;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.tip-percentages {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 35px;
+  background: #EEEEEE;
+  border-top: 1px solid #DEDEDE;
+  border-bottom: 1px solid #DEDEDE;
+}
+
+label {
+  background: #FFFFFF;
+  box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #60C1B6;
+  font-family: 'Roboto Mono', monospace;
+  width: 135px;
+  height: 68px;
+  font-size: 1.5rem;
   cursor: pointer;
-  border-radius: 50%;
-  outline: 15px solid rgba(234, 52, 111, .2);
 }
 
-input[type=range]::-moz-range-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  border: none; /* firefox needs this */
-  width: 50px;
-  height: 50px;
-  background: #EA346F;
-  cursor: pointer;
-  border-radius: 50%;
-  outline: 15px solid rgba(234, 52, 111, .2);
+input[type=radio] {
+  display: none;
 }
 
-/* progress (before knob) within Firefox */
-input[type=range]::-moz-range-progress {
-  background: #EA346F;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  height: 14px;
+input[type=radio]:checked + label {
+  background: #60C1B6;
+  color: white;
 }
 
+.button-wrapper {
+  box-sizing: border-box;
+  text-align: right;
+  width: 100%;
+  padding: 30px 35px;
+  background: #F7F7F7;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background: #F7F7F7;
+}
 
 button {
-  font-family: 'Source Sans Pro', sans-serif;
-  border: none;
-  color: white;
+  background: #ED7861;
+  box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  padding: 18px 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto Mono', monospace;
   font-size: 1.5rem;
-  text-transform: uppercase;
-  padding: 20px 40px;
-  background: #333139;
-  border-radius: 100px;
-  letter-spacing: 1px;
+  color: white;
+  border: none;
+  padding: 20px 100px;
+  margin-left: auto;
   cursor: pointer;
 }
 
 button:hover {
-  background: white;
-  color: black;
+  background: #254441;
 }

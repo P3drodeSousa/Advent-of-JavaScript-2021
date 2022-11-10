@@ -1,44 +1,46 @@
-const daysOfWeekMap = {
-  0: "SUN",
-  1: "MON",
-  2: "TUES",
-  3: "WED",
-  4: "THUR",
-  5: "FRI",
-  6: "SAT",
-};
-
-const iconNameToSizeMap = {
-  cloudy: { width: 264, height: 166 },
-  sunny: { width: 208, height: 213 },
-  stormy: { width: 246, height: 187 },
-  snowy: { width: 230, height: 196 },
-  "partly-cloudy": { width: 230, height: 209 },
-  rainy: { width: 160, height: 222 },
-};
-
-const api = {
-  key: "cf742c5cc6b0b5c2b7f4b17262c20468",
-  base: "https://api.openweathermap.org/data/2.5/",
-};
-
-/* E.h */
-const successCallback = async (position) => {
-  try {
-    const res = await fetch(
-      `https://api.openweathermap.org/data/2.5/forecast/daily?lat=44.34&lon=10.99&cnt=7&appid=${api.key}`
-    );
-    const data = await res.json();
-    console.log(data);
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-const errorCallback = (error) => {
-  console.log(error);
-};
-
-window.addEventListener("load", async () => {
-  navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-});
+const content = [
+  {
+    'image': 'dave-hoefler-okUIdo6NxGo-unsplash.jpg',
+    'caption': 'Photo by Dave Hoefler on Unsplash'
+  },
+  {
+    'image': 'sherman-yang-VBBGigIuaDY-unsplash.jpg',
+    'caption': 'Photo by Sherman Yang n Unsplash'
+  },
+  {
+    'image': 'jakob-owens-EwRM05V0VSI-unsplash.jpg',
+    'caption': 'Photo by Jakob Owens on Unsplash'
+  },
+  {
+    'image': 'finding-dan-dan-grinwis-O35rT6OytRo-unsplash.jpg',
+    'caption': 'Photo by Dan Grinwis on Unsplash'
+  },
+  {
+    'image': 'vincentiu-solomon-ln5drpv_ImI-unsplash.jpg',
+    'caption': 'Photo by Vincentiu Solomon on Unsplash'
+  },
+  {
+    'image': 'silas-baisch-Wn4ulyzVoD4-unsplash.jpg',
+    'caption': 'Photo by Silas Baisch on Unsplash'
+  },
+  {
+    'image': 'eugene-golovesov-EXdXp7Z4X4w-unsplash.jpg',
+    'caption': 'Photo by Eugene Golovesov on Unsplash'
+  },
+  {
+    'image': 'jennifer-reynolds-_8HI5xf4TkE-unsplash.jpg',
+    'caption': 'Photo by Jennifer reynolds on Unsplash'
+  },
+  {
+    'image': 'kellen-riggin-SIBOiXKg0Ds-unsplash.jpg',
+    'caption': 'Photo by Kellen Riggin on Unsplash'
+  },
+  {
+    'image': 'rafael-hoyos-weht-zhkAp8DGkxw-unsplash.jpg',
+    'caption': 'Photo by Rafael Hoyos on Unsplash'
+  },
+  {
+    'image': 'sonya-romanovska-wzdXhyi3AiM-unsplash.jpg',
+    'caption': 'Photo by Sonya Romanovska on Unsplash'
+  },
+]

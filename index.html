@@ -1,27 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>11 - 4 Digit Code || Advent of JavaScript</title>
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
 
-  <body>
-    <div class="wrapper">
-      <h1>Authorization Code</h1>
-      <p>Please enter the code that we sent to (***) *** - 2819.</p>
-      <form action="">
-        <div class="fields">
-          <input type="text" maxlength="1" value="" name="verification_1" />
-          <input type="text" maxlength="1" value="" name="verification_2" />
-          <input type="text" maxlength="1" value="" name="verification_3" />
-          <input type="text" maxlength="1" value="" name="verification_4" />
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11 - Expanding and Collapsing || Advent of JavaScript</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <ul>
+      <li>
+        <a href="#">
+          <div class="question">
+            <div class="question-mark">
+              <img src="./images/question-1.svg" alt="question" />
+            </div>
+            <div class="content">Technically, Svelte is a library and SvelteKit is a framework. What's the difference?
+            </div>
+          </div>
+        </a>
+        <div class="answer">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.
+          </p>
+
+          <p>
+            Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+            sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </p>
         </div>
-        <button>Verify</button>
-      </form>
-    </div>
-    <script src="app.js"></script>
-  </body>
+      </li>
+
+      <li class="expand">
+        <a href="#">
+          <div class="question">
+            <div class="question-mark">
+              <img src="./images/question-2.svg" alt="question" />
+            </div>
+            <div class="content">Do you provide a certificate of completion?</div>
+          </div>
+        </a>
+        <div class="answer">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.
+          </p>
+
+          <p>
+            Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+            sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+</body>
+
 </html>

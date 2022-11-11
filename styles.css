@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap");
 
 body {
   padding: 0;
@@ -8,7 +8,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 800;
 }
 
@@ -43,7 +43,7 @@ a {
 }
 
 .question:before {
-  content: '';
+  content: "";
   display: block;
   background: black;
   width: 102px;
@@ -62,8 +62,9 @@ a {
 }
 
 .question:after {
-  content: '';
-  background: #F0F0F0 url('./images/chevron.svg') calc(100% - 12px) 20px no-repeat;
+  content: "";
+  background: #f0f0f0 url("./images/chevron.svg") calc(100% - 12px) 20px
+    no-repeat;
   width: calc(100%);
   position: absolute;
   right: -55px;
@@ -74,7 +75,8 @@ a {
 
 .expand .question:after,
 a:hover .question:after {
-  background-color: #FFDD00;
+  background-color: #ffdd00;
+  transition: all 600ms ease-out;
 }
 
 .question .content {
@@ -88,9 +90,13 @@ a:hover .question:after {
 
 .expand .answer {
   display: block;
-  background-color: #FFDD00;
+  background-color: #ffdd00;
   width: calc(100% - 60px);
   margin-left: 55px;
   padding: 30px 75px;
   box-sizing: border-box;
+}
+
+.expand .question.visible:after {
+  background: #ffdd00 url("./images/close.svg") calc(100% - 12px) 20px no-repeat;
 }

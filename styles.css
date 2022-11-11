@@ -1,105 +1,132 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --pink: #F41E82;
+  --gold: #FFD200;
+}
+
 
 body {
+  margin: 0;
+  padding: 0;
   min-width: 100vw;
   min-height: 100vh;
-  font-family: "Roboto Mono", monospace;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: black;
+  font-family: 'Roboto', sans-serif;
 }
 
 .wrapper {
-}
-
-h1 {
-  font-weight: bold;
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 75px;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  gap: 75px;
-}
-
-li.pick-one {
-  display: flex;
-  text-align: center;
-}
-
-li.pick-one button {
-  background: none;
-  border: 2px solid black;
-  font-family: "Roboto Mono", monospace;
-  cursor: pointer;
-  height: 355px;
-  width: 325px;
-  font-size: 1.25rem;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-li.pick-one button:hover {
-  border: 10px solid #ffb800;
+svg {
+  max-height: 100%;
+  max-width: 100%;
 }
 
-li.pick-one img {
-  max-height: 250px;
-  max-width: 250px;
-  pointer-events: none;
-}
-
-/* Winner Page */
-body.winner.you-win {
-  background: url("./images/you-win.svg") left top no-repeat;
-  background-size: auto 100%;
-}
-
-body.winner.computer-wins {
-  background: url("./images/computer-wins.svg") right top no-repeat;
-  background-size: auto 100%;
-}
-
-body.computer-wins h1.you-win,
-body.you-win h1.computer-wins {
-  visibility: hidden;
-}
-
-body.winner .wrapper {
-  display: flex;
-  gap: 200px;
+svg circle.dot {
+  fill: var(--pink);
   position: relative;
 }
 
-body.winner img {
-  mix-blend-mode: multiply;
+a:hover #my-circle {
+  animation-name: beacon;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  animation-timing-function: ease;
 }
 
-.computer-pick img {
-  transform: scaleX(-1);
+@keyframes beacon {
+  0% {
+    r: 22;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    r: 50;
+    opacity: 0;
+  }
 }
 
-.play-again {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+.overlay {
+  backdrop-filter: blur(45px);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
   bottom: 0;
-  font-family: "Roboto Mono", monospace;
-  font-size: 2rem;
-  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  box-shadow: 0px 0px 110px rgba(0, 0, 0, 0.25);
+  border-radius: 40px;
+  width: 60%;
+  padding: 75px 95px;
+  display: flex;
+  gap: 100px;
+  position: relative;
+}
+
+.product-image,
+.content {
+  flex: 1;
+}
+
+.close {
+  position: absolute;
   background: none;
-  padding: 15px 85px;
+  border: none;
+  top: 25px;
+  right: 25px;
   cursor: pointer;
 }
 
-.play-again:hover {
-  background: black;
-  color: white;
+h1 {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  color: var(--pink);
+  font-size: 8rem;
+  font-weight: 700;
+  letter-spacing: -.5px;
+  padding: 0;
+  margin: 0 0 50px;
+  line-height: .9;
+}
+
+.description {
+  margin-bottom: 50px;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+.buy-now {
+  background-color: var(--gold);
+  color: black;
+  border-radius: 100px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  padding: 20px 50px;
+  text-decoration: none;
+}
+
+.buy-now:hover {
+  background-color: #3452a5;
+  color: var(--gold);
 }

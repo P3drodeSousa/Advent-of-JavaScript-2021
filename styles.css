@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:wght@400;700&display=swap");
 
 body {
   margin: 0;
   padding: 0;
   min-width: 100vw;
   min-height: 100vh;
-  background: #FBFBFB;
+  background: #fbfbfb;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 2rem;
 }
 
@@ -18,7 +18,7 @@ body {
   grid-template-columns: repeat(7, minmax(60px, 1fr));
   max-width: 660px;
   grid-gap: 30px;
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0px 2.3128px 39.3176px rgba(0, 0, 0, 0.25);
   border-radius: 24px;
   padding: 75px 100px;
@@ -34,7 +34,7 @@ div {
 
 .month {
   grid-column: span 5;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   text-transform: uppercase;
   line-height: 32px;
 }
@@ -48,4 +48,9 @@ div {
   border-radius: 50%;
   height: 60px;
   width: 60px;
+}
+
+.next,
+.previous {
+  cursor: pointer;
 }

@@ -1,134 +1,131 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@400;700&display=swap');
 
 body {
-  padding: 0;
-  margin: 0;
   min-width: 100vw;
   min-height: 100vh;
-  font-family: 'Roboto', sans-serif;
-}
-
-h1 {
-  font-size: 4.5rem;
-  line-height: 1;
-  font-weight: 900;
-  margin: 0 0 10px 0;
-  padding: 0;
-}
-
-h2 {
-  font-weight: 400;
-  font-size: 1.625rem;
-  margin: 0 0 40px;
-}
-
-h3 {
-  font-size: 1.625rem;
-  line-height: 2rem;
-  font-weight: 800;
-}
-
-a {
-  color: #F40082;
-  font-weight: 800;
-}
-
-blockquote {
-  font-size: 1.625rem;
-  color: #8B8B8B;
-  max-width: 466px;
-  margin: 38px auto;
-}
-
-caption {
-  text-align: center;
-  color: gray;
-  font-size: 0.875rem;
-}
-
-.image-text-wrapper {
   display: flex;
-  gap: 50px;
-  margin-bottom: 70px;
-  margin-left: -70px;
-  padding-top: 50px;
+  justify-content: center;
+  align-items: center;
+  background-color: #F1F7F4;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  color: #31292F;
 }
 
-.image {
-  margin-left: -70px;
-  margin-bottom: 50px;
-  padding-top: 50px;
+.field {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
 }
 
-.image-text-wrapper__image,
-.image-text-wrapper__content {
-  flex: 1;
+input[type=text] {
+  font-family: 'Roboto Mono', monospace;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 24px #CADBD2;
+  border-radius: 20px;
+  font-family: Roboto Mono;
+  font-size: 32px;
+  line-height: 42px;
+  color: #000000;
+  width: 600px;
+  height: 100px;
+  border: none;
+  margin-bottom: 40px;
+  padding: 0 40px;
+  margin-right: 18px;
 }
 
-.content {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  grid-column-gap: 20px;
+.copy {
+  background: none;
+  border: none;
+  color: #7DA9AE;
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  height: 100px;
+  margin-bottom: 40px;
+  min-width: 140px;
 }
 
-
-aside {
-  grid-column: 2 / span 2;
+.copy svg {
+  fill: currentColor;
+  margin-right: 0px;
 }
 
-aside > div {
-  position: sticky;
-  padding-top: 150px;
-  top: 0px;
+.copy span {
+  display: none;
 }
 
-aside .table-of-contents {
-  text-transform: uppercase;
-  font-size: 0.875rem;
-  letter-spacing: 3px;
-  padding-left: 24px;
-  margin-bottom: 30px;;
-}
-
-aside ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-aside ul li {
-  margin-bottom: 30px;
-  padding: 0 0 0 24px;
-  font-size: 1rem;
-}
-
-aside ul li.selected {
-  color: #F40082;
-  border-left: 2px solid #F40082
-}
-
-aside ul li a {
-  text-decoration: none;
-  color: black;
-  font-weight: normal;
-}
-
-aside ul li.selected a {
+.copy.copied {
+  color: #4A9661;
   font-weight: bold;
-  color: #F40082;
 }
 
-main {
-  padding-top: 50px;
-  grid-column: 5 / span 5;
-  margin-left: 100px;
+.copy.copied span {
+  display: block;
 }
 
-p {
-  font-size: 1rem;
-  line-height: 2;
+input[type=range] {
+  -webkit-appearance: none;
 }
 
-img {
-  max-width: 100%;
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  background: #7DA9AE;
+  cursor: pointer;
+  position: relative;
+  top: -12px;
+}
+
+input[type=range]::-moz-range-thumb {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  background: #7DA9AE;
+  cursor: pointer;
+  position: relative;
+  top: -12px;
+}
+
+input[type=range]::-ms-thumb {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  background: #7DA9AE;
+  cursor: pointer;
+  position: relative;
+  top: -12px;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  background: #CEDFE1;
+  border-radius: 4px;
+  width: 385px;
+  height: 9px;
+}
+
+input[type=range] {
+  width: 385px;
+  margin-right: 35px;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=checkbox] + label {
+  background: url("images/checkbox--unchecked.svg") left top no-repeat;
+  padding-left: 50px;
+  min-height: 35px;
+  padding-top: 6px;
+  cursor: pointer;
+}
+
+input[type=checkbox]:checked + label {
+  background: url("images/checkbox--checked.svg") left top no-repeat;
 }

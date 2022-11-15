@@ -1,26 +1,30 @@
 const titles = document.querySelectorAll("h3");
 const contents = document.querySelectorAll("ul li a");
 
+const contentsArr = Array.from(contents);
+
+let prev;
+
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
-      console.log(entry.isIntersecting);
-      console.log(
-        titles[
-          Array.from(contents, (content) => content.textContent).indexOf(
-            entry.target.textContent
-          )
-        ]
-      );
-      /*    titles[
-        Array.from(contents, (content) => content.textContent).indexOf(
-          entry.target.textContent
-        )
-      ].classList.toggle("selected", entry.isIntersecting); */
+      if (entry.isIntersecting) {
+        const index = contentsArr.findIndex(
+          (el) => el.textContent === entry.target.textContent
+        );
+        console.log(index);
+        contents[index].parentElement.classList.add("selected");
+
+        if (prev) {
+          prev.classList.remove("selected");
+        }
+        prev = contents[index].parentElement;
+      }
     });
   },
   {
-    threshold: 0.5,
+    threshold: 1,
+    rootMargin: "0px 0px -70% 0px",
   }
 );
 

@@ -1,120 +1,132 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Mono:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 :root {
-  --primary: #FAFF00;
+  --primary: #363DAA;
+  --selected: #363DAA;
+  --unselected: #DDE8F7;
 }
 
 body {
   padding: 0;
   margin: 0;
-  min-width: 100vw;
   min-height: 100vh;
-  font-family: 'Bebas Neue', cursive;
+  min-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
 }
 
-.toaster {
-  background: #8D58FF;
-  color: white;
-  padding: 55px;
-  width: 520px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  transition: bottom 1s ease-in-out;
+.wrapper {
+  width: 1300px;
 }
 
-.toaster.collapsed {
-  bottom: -600px;
+th {
+  border-bottom: 2px solid black;
+  padding: 15px 0;
+  padding-right: 12px;
+  padding-left: 18px;
+  font-size: 18px;
 }
 
-.close {
-  position: absolute;
-  top: -40px;
-  left: 45px;
+th.header__id {
+  padding-left: 0;
 }
 
-.close-toaster {
+td {
+  border-bottom: 2px solid #DDE8F7;
+  padding: 5px 0;
+}
+
+.sort {
   background: none;
   border: none;
-  text-transform: uppercase;
-  font-family: serif;
-  font-size: 1.25rem;
-  line-height: 1rem;
-  letter-spacing: 0.03em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  font-family: 'Bebas Neue', cursive;
-  color: #3200A0;
   cursor: pointer;
 }
 
-h1 {
-  font-family: 'Bebas Neue', cursive;
-  text-transform: uppercase;
-  font-size: 5.875rem;
-  padding: 0;
-  margin: 0;
-  line-height: 4.5rem;
-  font-weight: normal;
+.sort svg {
+  fill: var(--unselected);
 }
 
-p {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 1rem;
-  line-height: 1.875rem;
-  padding-bottom: 30px;
+.sort.descending svg .descending,
+.sort.ascending svg .ascending {
+  fill: var(--selected);
 }
 
-.cover {
-  position: absolute;
-  right: -120px;
-  top: -120px;
-  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.25);
-  opacity: 1;
-}
-
-.collapsed .cover {
-  opacity: 0;
-}
-
-form {
-  display: flex;
-  align-items: center;
-}
-
-label {
-  color: var(--primary);
-  font-family: 'Roboto Mono', monospace;
-  text-transform: uppercase;
+th {
+  text-align: left;
   font-weight: bold;
-  font-size: 1rem;
-  line-height: 1;
-  display: block;
-  margin-bottom: 10px;
+  color: var(--primary);
+  line-height: 20px;
 }
 
-input[type=email] {
-  background: #b686ff;
-  width: 325px;
+td {
+  padding-right: 12px;
+}
+
+input[type="text"],
+input[type="email"] {
+  background: none;
+  padding: 0 16px;
   height: 55px;
   border-radius: 4px;
-  font-family: 'Roboto Mono', monospace;
-  color: black;
-  font-size: 1.125;
-  padding: 0 20px;
   border: none;
-  margin-right: 10px;;
+  font-size: 18px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.submit {
+.edit input[type="text"],
+.edit input[type="email"] {
+  background: #EDF4F9;
+}
+
+.name input[type="text"] {
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.update,
+.edit {
   background: none;
   border: none;
-  height: 55px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
   cursor: pointer;
+}
+
+.update {
+  display: none;
+}
+
+tr.edit .update {
+  display: block;
+}
+
+tr.edit .edit {
+  display: none;
+}
+
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
+}
+
+.pagination button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+tbody tr:last-child td {
+  border-bottom: 2px solid black;
+}
+
+tfoot td {
+  border-bottom: 0;
+}
+
+tfoot input[type="text"] {
+  width: 50px;
+  text-align: center;
 }

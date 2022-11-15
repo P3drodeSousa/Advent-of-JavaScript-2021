@@ -29,8 +29,6 @@ const exit = (e) => {
     [...e.currentTarget.classList].includes("close-toaster") ||
     e.currentTarget.className === "close-toaster" ||
     e.keyCode === 27;
-  console.log(e.currentTarget);
-  console.log([...e.currentTarget].classList.includes("close-toaster"));
   if (shouldExit) {
     toaster.classList.add("collapsed");
   }

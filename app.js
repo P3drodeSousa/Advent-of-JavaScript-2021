@@ -23,7 +23,35 @@ function toggleToaster() {
 
 //E:L
 //Close modal
-document.querySelector("button.close-toaster"),
-  addEventListener("click", toggleToaster);
 
-document.addEventListener("mouseout", toggleToaster);
+const exit = (e) => {
+  const shouldExit =
+    [...e.currentTarget.classList].includes("close-toaster") ||
+    e.currentTarget.className === "close-toaster" ||
+    e.keyCode === 27;
+  console.log(e.currentTarget);
+  console.log([...e.currentTarget].classList.includes("close-toaster"));
+  if (shouldExit) {
+    toaster.classList.add("collapsed");
+  }
+};
+
+const mouseEvent = (e) => {
+  const shouldShowExitIntent =
+    !e.toElement && !e.relatedTarget && e.clientY < 10;
+
+  console.log(shouldShowExitIntent);
+
+  if (shouldShowExitIntent) {
+    document.removeEventListener("mouseout", mouseEvent);
+
+    toaster.classList.remove("collapsed");
+  }
+};
+
+setTimeout(() => {
+  document.addEventListener("keydown", exit);
+}, 10_000);
+
+document.addEventListener("mouseout", mouseEvent);
+document.querySelector("button.close-toaster"), addEventListener("click", exit);
